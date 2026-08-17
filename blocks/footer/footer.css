@@ -1,20 +1,140 @@
+/* Mandai footer */
+
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: #000;
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-size: 14px;
 }
 
-footer .footer > div {
+footer .footer {
+  max-width: 1280px;
   margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+  padding: 60px 24px 24px;
+}
+
+footer .footer a:any-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer .footer a:hover {
+  color: var(--brand-yellow);
+  text-decoration: underline;
+}
+
+footer .footer h2 {
+  color: #fff;
+  font-family: var(--heading-font-family);
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 18px;
+}
+
+footer .footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer .footer li {
+  margin: 0 0 10px;
 }
 
 footer .footer p {
   margin: 0;
 }
 
+/* top region: columns */
+footer .footer-top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgb(255 255 255 / 20%);
+}
+
+/* awards column */
+footer .footer-awards p {
+  margin: 0 0 16px;
+}
+
+footer .footer-awards img {
+  height: 56px;
+  width: auto;
+  max-width: 100%;
+}
+
+/* social column */
+footer .footer-social ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+footer .footer-social li {
+  margin: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+footer .footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgb(255 255 255 / 40%);
+  border-radius: 50%;
+}
+
+footer .footer-social a:hover {
+  background: var(--brand-yellow);
+  border-color: var(--brand-yellow);
+  color: var(--brand-green);
+}
+
+footer .footer-social svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* legal bar */
+footer .footer-legal {
+  padding-top: 24px;
+  font-size: 12px;
+  color: rgb(255 255 255 / 80%);
+}
+
+footer .footer-legal p {
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+footer .footer-legal ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 8px;
+}
+
+footer .footer-legal li {
+  margin: 0;
+}
+
+/* ==================== DESKTOP ==================== */
+
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+  footer .footer {
+    padding: 60px 32px 24px;
+  }
+
+  footer .footer-top {
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 40px;
+  }
+
+  /* awards spans the left, social sits under it in the same column */
+  footer .footer-awards {
+    grid-row: span 2;
   }
 }
