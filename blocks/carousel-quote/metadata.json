@@ -1,0 +1,40 @@
+{
+  "variantName": "carousel-quote",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-08-14T08:26:59.225Z",
+  "sourceContext": {
+    "originUrl": "https://www.mandai.com/en.html",
+    "originPage": "Mandai homepage - guest reviews / quote carousel",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "quote-review",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "quote paragraph + attribution",
+    "buttonCount": 0,
+    "imageCount": 0,
+    "slideCount": 2
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "testimonial/review rotators",
+      "text-only quote sliders"
+    ],
+    "notSuitableFor": [
+      "image hero banners",
+      "image-tile galleries"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/en"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-14T08:26:59.225Z"
+  }
+}

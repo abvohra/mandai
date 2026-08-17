@@ -10,6 +10,9 @@ import {
   loadSections,
   loadCSS,
   buildBlock,
+  readBlockConfig,
+  toClassName,
+  toCamelCase,
 } from './aem.js';
 
 if (window.trustedTypes && window.trustedTypes.createPolicy) {
@@ -143,6 +146,31 @@ function decorateButtons(main) {
 }
 
 /**
+ * Reads section metadata blocks and applies their styles/config to the section.
+ * The bundled aem.js does not process section metadata, so we do it here.
+ * @param {Element} main The main element
+ */
+function decorateSectionMetadata(main) {
+  main.querySelectorAll('.section .section-metadata').forEach((meta) => {
+    const section = meta.closest('.section');
+    if (!section) return;
+    const config = readBlockConfig(meta);
+    Object.keys(config).forEach((key) => {
+      if (key === 'style') {
+        const styles = config.style
+          .split(',')
+          .map((style) => toClassName(style.trim()))
+          .filter((style) => style);
+        styles.forEach((style) => section.classList.add(style));
+      } else {
+        section.dataset[toCamelCase(key)] = config[key];
+      }
+    });
+    meta.parentElement.remove();
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -151,6 +179,7 @@ export function decorateMain(main) {
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
+  decorateSectionMetadata(main);
   decorateBlocks(main);
   decorateButtons(main);
 }

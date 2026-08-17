@@ -1,0 +1,107 @@
+/* cards-tile — white rounded tiles on cream, image + title + text + CTA.
+   Values extracted from source (mandai.com "Too Wild To Miss Itineraries"). */
+
+.cards-tile > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.cards-tile > ul > li {
+  flex: 1 1 260px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255 255 255);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* image */
+.cards-tile .cards-tile-card-image {
+  line-height: 0;
+}
+
+.cards-tile .cards-tile-card-image img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+/* body */
+.cards-tile .cards-tile-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 10px 17px 17px;
+}
+
+.cards-tile .cards-tile-card-body h3,
+.cards-tile .cards-tile-card-body h4 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.19;
+  color: var(--brand-green);
+  margin: 8px 0 12px;
+}
+
+.cards-tile .cards-tile-card-body p {
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--brand-ink);
+  margin: 0 0 8px;
+}
+
+/* CTA link — bold green with circular arrow, pushed to bottom of card */
+.cards-tile .cards-tile-card-body p:last-child {
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.cards-tile .cards-tile-card-body p:last-child a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--brand-green);
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.cards-tile .cards-tile-card-body p:last-child a:hover {
+  text-decoration: none;
+}
+
+.cards-tile .cards-tile-card-body p:last-child a::after {
+  content: "";
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: var(--brand-green);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 6 15 12 9 18'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media (width >= 900px) {
+  .cards-tile > ul {
+    gap: 36px;
+  }
+
+  .cards-tile .cards-tile-card-body {
+    padding: 10px 17px 17px;
+  }
+
+  .cards-tile .cards-tile-card-body h3,
+  .cards-tile .cards-tile-card-body h4 {
+    font-size: 26px;
+    line-height: 1.19;
+    margin: 8px 0 16px;
+  }
+}

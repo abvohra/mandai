@@ -1,0 +1,159 @@
+/* Guest reviews / testimonials carousel — centered serif quote + attribution.
+   Lives inside a beige section (background + vertical padding come from the section). */
+
+.carousel-quote .carousel-quote-slides-container {
+  position: relative;
+}
+
+.carousel-quote .carousel-quote-slides,
+.carousel-quote .carousel-quote-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-quote .carousel-quote-slides {
+  display: flex;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: scroll clip;
+}
+
+.carousel-quote .carousel-quote-slides::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-quote .carousel-quote-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* First authored cell is empty (no image in the source design) */
+.carousel-quote .carousel-quote-slide-image {
+  display: none;
+}
+
+.carousel-quote .carousel-quote-slide-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 48px;
+  text-align: center;
+}
+
+.carousel-quote .carousel-quote-slide-content h4 {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--brand-green);
+  text-align: center;
+}
+
+.carousel-quote .carousel-quote-slide-content p {
+  margin: 20px 0 0;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--brand-ink);
+  text-align: center;
+}
+
+/* prev / next arrows — transparent, chevron glyphs at the section edges */
+.carousel-quote .carousel-quote-navigation-buttons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel-quote .carousel-quote-navigation-buttons button {
+  position: relative;
+  width: 32px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.carousel-quote .carousel-quote-navigation-buttons button::after {
+  display: block;
+  content: '';
+  border: 2px solid var(--brand-ink);
+  border-bottom: 0;
+  border-left: 0;
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 2px);
+  transform: translate(-50%, -50%) rotate(-135deg);
+  transition: opacity 0.2s;
+}
+
+.carousel-quote .carousel-quote-navigation-buttons button.slide-next::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+  left: calc(50% - 2px);
+}
+
+.carousel-quote .carousel-quote-navigation-buttons button:hover::after,
+.carousel-quote .carousel-quote-navigation-buttons button:focus-visible::after {
+  opacity: 0.6;
+}
+
+/* dot indicators */
+.carousel-quote .carousel-quote-slide-indicators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  line-height: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel-quote .carousel-quote-slide-indicator button {
+  width: 8px;
+  height: 8px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--brand-ink);
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.carousel-quote .carousel-quote-slide-indicator button:disabled,
+.carousel-quote .carousel-quote-slide-indicator button:hover,
+.carousel-quote .carousel-quote-slide-indicator button:focus-visible {
+  opacity: 0.85;
+}
+
+@media (width >= 900px) {
+  .carousel-quote .carousel-quote-navigation-buttons {
+    left: -8px;
+    right: -8px;
+  }
+
+  .carousel-quote .carousel-quote-slide-content {
+    padding: 0 24px;
+  }
+}

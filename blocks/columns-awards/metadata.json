@@ -1,0 +1,40 @@
+{
+  "variantName": "columns-awards",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-08-14T08:26:59.225Z",
+  "sourceContext": {
+    "originUrl": "https://www.mandai.com/en.html",
+    "originPage": "Mandai homepage - awards / certification logo row",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "logo-strip",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "logo image + caption per column",
+    "buttonCount": 0,
+    "imageCount": 4,
+    "columnCount": 4
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "award/certification logo strips",
+      "partner/sponsor logo rows with captions"
+    ],
+    "notSuitableFor": [
+      "content comparison columns",
+      "image + copy split layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/en"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-14T08:26:59.225Z"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "variantName": "cards-social",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-08-14T08:26:59.225Z",
+  "sourceContext": {
+    "originUrl": "https://www.mandai.com/en.html",
+    "originPage": "Mandai homepage - social media photo grid",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "social-grid",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + handle label",
+    "buttonCount": 0,
+    "imageCount": 1,
+    "cardCount": 7
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "social media photo grids",
+      "image galleries with caption/handle overlays"
+    ],
+    "notSuitableFor": [
+      "content-rich cards with body copy",
+      "text-only option lists"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/en"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-14T08:26:59.225Z"
+  }
+}

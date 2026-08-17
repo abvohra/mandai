@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-admission",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-08-14T08:26:59.225Z",
+  "sourceContext": {
+    "originUrl": "https://www.mandai.com/en.html",
+    "originPage": "Mandai homepage - What's New admission types row",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "compact",
+    "purpose": "admission-types",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "heading + description + CTA",
+    "buttonCount": 1,
+    "imageCount": 0,
+    "cardCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "text-only feature/option rows",
+      "ticket/pass/membership option lists"
+    ],
+    "notSuitableFor": [
+      "image-led card grids"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/en"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-14T08:26:59.225Z"
+  }
+}

@@ -1,0 +1,170 @@
+/* Visitor Guide tabs — styling migrated from mandai.com #visitorguide */
+
+/* ---- Tab list (pill buttons) ---- */
+.tabs-guide .tabs-guide-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  font-size: var(--body-font-size-xs);
+}
+
+.tabs-guide .tabs-guide-list button {
+  flex: 0 1 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  border: 1px solid rgb(112 112 112);
+  border-radius: 60px;
+  padding: 12px 20px;
+  background-color: rgb(255 255 255);
+  color: var(--brand-green);
+  font-family: var(--body-font-family);
+  font-size: inherit;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.tabs-guide .tabs-guide-list button :where(p) {
+  margin: 0;
+  color: inherit;
+}
+
+.tabs-guide .tabs-guide-list button:hover {
+  border-color: var(--brand-green);
+}
+
+.tabs-guide .tabs-guide-list button[aria-selected='true'] {
+  border-color: transparent;
+  background-color: rgb(1 114 47);
+  color: var(--brand-cream-soft);
+  cursor: default;
+}
+
+/* ---- Tab panels ---- */
+.tabs-guide .tabs-guide-panel {
+  margin-top: 32px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.tabs-guide .tabs-guide-panel[aria-hidden='true'] {
+  display: none;
+}
+
+.tabs-guide .tabs-guide-panel > div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* panel typography — source renders all panel text in brand green */
+.tabs-guide .tabs-guide-panel h3 {
+  margin: 0 0 10px;
+  padding: 0;
+  color: var(--brand-green);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.tabs-guide .tabs-guide-panel p {
+  margin: 0 0 20px;
+  color: var(--brand-green);
+}
+
+/* image cell */
+.tabs-guide .tabs-guide-panel p:has(picture) {
+  margin: 0 0 20px;
+}
+
+.tabs-guide .tabs-guide-panel picture {
+  display: block;
+}
+
+.tabs-guide .tabs-guide-panel img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgb(112 112 112);
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* CTA link with circular arrow */
+.tabs-guide .tabs-guide-panel a:any-link {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  color: var(--brand-green);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.tabs-guide .tabs-guide-panel a:any-link:hover {
+  text-decoration: underline;
+}
+
+.tabs-guide .tabs-guide-panel a:any-link::after {
+  content: '';
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  margin-left: 8px;
+  border-radius: 50%;
+  background:
+    var(--brand-green)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fbebce' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E")
+    center / 11px no-repeat;
+}
+
+/* ---- Desktop: two-column panel, larger heading ---- */
+@media (width >= 900px) {
+  .tabs-guide .tabs-guide-list {
+    gap: 16px;
+    font-size: var(--body-font-size-xs);
+  }
+
+  .tabs-guide .tabs-guide-list button {
+    flex: 1 1 0;
+  }
+
+  .tabs-guide .tabs-guide-panel {
+    margin-top: 40px;
+  }
+
+  .tabs-guide .tabs-guide-panel > div {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 60px;
+    align-items: center;
+  }
+
+  .tabs-guide .tabs-guide-panel h3 {
+    font-size: 40px;
+  }
+
+  .tabs-guide .tabs-guide-panel > div > * {
+    grid-column: 1;
+  }
+
+  .tabs-guide .tabs-guide-panel p:has(picture) {
+    grid-column: 2;
+    grid-row: 1 / -1;
+    margin: 0;
+  }
+
+  .tabs-guide .tabs-guide-panel img {
+    width: 480px;
+    max-width: 45vw;
+  }
+}

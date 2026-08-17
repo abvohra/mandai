@@ -1,0 +1,37 @@
+/* Block: carousel-hero -- extracted from source computed styles (mandai.com/en) */
+
+/* Heading (h1) */
+.carousel-hero h1 {
+  /* mobile */ font-size: 36px; line-height: 40px;
+  /* desktop */ /* font-size: 60px; line-height: 70px; */
+  font-weight: 700;
+  color: rgb(255 204 0); /* --brand-yellow */
+  text-align: center;
+  margin: 0 0 15px;
+}
+
+/* Text panel: centered, positioned mid; NO solid box.
+   Scrim: .text-gradient::after radial-gradient(20% 300px, rgb(0,0,0) -50%, rgba(0,0,0,0) 100%) */
+/* padding mobile 0 52px ; desktop 0 200px ; max-width 1200px ; text-align center */
+
+/* CTA */
+.carousel-hero-cta {
+  color: rgb(0 52 0);            /* --brand-green */
+  background-color: rgb(255 204 0); /* --brand-yellow */
+  border: 0;
+  border-radius: 30px;
+  padding: 17px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Dots */
+.dot { width: 12px; height: 12px; background: rgb(255 204 0); border-radius: 50%; }
+/* dots container position absolute bottom 24px, centered */
+
+/* Nav arrows: transparent bg, plain chevron ~18x32 */
+
+/* Image: object-fit cover, full bleed.
+   mobile 390x730 (portrait KV) ; desktop 1440x830 (~57.6vw) */

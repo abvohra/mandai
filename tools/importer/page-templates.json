@@ -1,0 +1,169 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.mandai.com/en.html"
+      ],
+      "coverageGaps": [],
+      "description": "Mandai Wildlife Reserve homepage: masthead carousel hero, What's New feature carousel with admission types, A Wilder World Awaits experiences with carousel, Dine & Shop cards, Too Wild To Miss itineraries, Meet our animal residents carousel, Visitor Guide tabs, Awards logos row, social content grid, and quote/review carousel.",
+      "blocks": [
+        {
+          "name": "carousel-hero",
+          "instances": [
+            ".mandaimastheadcarousel .md-masthead-component.banner__carousel"
+          ]
+        },
+        {
+          "name": "carousel-feature",
+          "instances": [
+            ".mandaifeaturecarousel .md-feature-carousel.bg-dark-green",
+            ".mandaiexperiencecarouselfeature .md-feature-carousel-experience",
+            "#animals.md-feature-carousel"
+          ]
+        },
+        {
+          "name": "cards-admission",
+          "instances": [
+            ".admissiontypeswidget"
+          ]
+        },
+        {
+          "name": "cards-tile",
+          "instances": [
+            ".mandaicffourcollisting .md-4-col-content-fragment",
+            "#dineshop.md-feature-carousel"
+          ]
+        },
+        {
+          "name": "cards-itinerary",
+          "instances": [
+            ".featuredlistingv2"
+          ]
+        },
+        {
+          "name": "tabs-guide",
+          "instances": [
+            "#visitorguide.md-accordion-tabs"
+          ]
+        },
+        {
+          "name": "columns-awards",
+          "instances": [
+            ".columncontrol .column-control-blocks"
+          ]
+        },
+        {
+          "name": "cards-social",
+          "instances": [
+            ".mandaisocialcontentgrid"
+          ]
+        },
+        {
+          "name": "carousel-quote",
+          "instances": [
+            ".mandaiquotecarousel .md-quote-carousel"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "rc3",
+          "name": "Hero Masthead Carousel",
+          "selector": "body > main > div.container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.mandaimastheadcarousel.parsys.aem-GridColumn.aem-GridColumn--default--12",
+          "style": null,
+          "blocks": [
+            "carousel-hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc4",
+          "name": "What's New",
+          "selector": "body > main > div.container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.section.parsys.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(3)",
+          "style": "dark-green",
+          "blocks": [
+            "carousel-feature",
+            "cards-admission"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc5",
+          "name": "A Wilder World Awaits",
+          "selector": "body > main > div.container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.section.parsys.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(4)",
+          "style": "beige",
+          "blocks": [
+            "cards-tile",
+            "carousel-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc6",
+          "name": "A Wilder Way to Eat and Shop",
+          "selector": "body > main > div.container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.section.parsys.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(5)",
+          "style": "beige",
+          "blocks": [
+            "cards-tile"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc7",
+          "name": "Too Wild To Miss Itineraries",
+          "selector": "body > main > div.container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.section.parsys.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(6)",
+          "style": "beige",
+          "blocks": [
+            "cards-itinerary"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc8",
+          "name": "Meet our animal residents",
+          "selector": "body > main > div.container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.section.parsys.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(7)",
+          "style": "grass-image",
+          "blocks": [
+            "carousel-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc9",
+          "name": "Visitor Guide",
+          "selector": "body > main > div.container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.section.parsys.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(8)",
+          "style": "beige",
+          "blocks": [
+            "tabs-guide"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc10",
+          "name": "Awards",
+          "selector": "body > main > div.container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.section.parsys.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(9)",
+          "style": "beige",
+          "blocks": [
+            "columns-awards"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc11",
+          "name": "Social Grid & Guest Reviews",
+          "selector": "body > main > div.container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.aside.parsys.aem-GridColumn.aem-GridColumn--default--12",
+          "style": "beige",
+          "blocks": [
+            "cards-social",
+            "carousel-quote"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

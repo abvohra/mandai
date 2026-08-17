@@ -1,0 +1,42 @@
+/*
+ * brand.css
+ * Design tokens extracted from https://www.mandai.com/en.html
+ *
+ * The source site uses a proprietary "Value Serif" typeface that is not
+ * available via Adobe Fonts or Google Fonts. The source itself declares
+ * Georgia as the fallback, so we adopt Georgia (serif) as the brand face.
+ */
+
+:root {
+  /* fonts */
+  --heading-font-family: georgia, "Times New Roman", serif;
+  --body-font-family: georgia, "Times New Roman", serif;
+
+  /* colors */
+  --background-color: rgb(250 245 233); /* warm cream */
+  --text-color: rgb(51 51 51);
+  --link-color: rgb(0 52 0); /* dark green */
+  --link-hover-color: rgb(0 82 0);
+
+  /* brand palette */
+  --brand-green: rgb(0 52 0);
+  --brand-cream: rgb(250 245 233);
+  --brand-cream-soft: rgb(251 235 206);
+  --brand-yellow: rgb(255 204 0);
+  --brand-ink: rgb(32 39 33);
+
+  /* section variants */
+  --dark-color: rgb(0 52 0);
+  --light-color: rgb(250 245 233);
+
+  /* spacing */
+  --nav-height: 70px;
+
+  /* heading sizes (desktop) */
+  --heading-font-size-xxl: 36px;
+  --heading-font-size-xl: 32px;
+  --heading-font-size-l: 20px;
+  --heading-font-size-m: 16px;
+  --heading-font-size-s: 18px;
+  --heading-font-size-xs: 16px;
+}

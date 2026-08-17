@@ -1,0 +1,40 @@
+{
+  "variantName": "tabs-guide",
+  "baseBlock": "tabs",
+  "version": "1.0.0",
+  "created": "2026-08-14T08:26:59.225Z",
+  "sourceContext": {
+    "originUrl": "https://www.mandai.com/en.html",
+    "originPage": "Mandai homepage - Visitor Guide tabs",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "visitor-guide",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "tab label + (heading + paragraph + image + CTA)",
+    "buttonCount": 1,
+    "imageCount": 1,
+    "tabCount": 4
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "tabbed guide/help panels",
+      "multi-topic switchers with rich panels"
+    ],
+    "notSuitableFor": [
+      "simple FAQ accordions",
+      "brief single-topic content"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/en"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-14T08:26:59.225Z"
+  }
+}

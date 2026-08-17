@@ -1,0 +1,80 @@
+/* Block: cards-admission
+ * Source: .admissiontypeswidget on https://www.mandai.com/en.html
+ * Source is a single-column stacked list of green serif titles, each with a
+ * circular chevron badge, on a cream-soft background. This block lives in a
+ * dark-green section, so the same stacked-list layout and typography are
+ * adapted to read on the dark background (yellow titles, light descriptions).
+ */
+
+.cards-admission > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* source .md-admission-type__list gap */
+}
+
+.cards-admission > ul > li {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(255 255 255 / 25%);
+}
+
+.cards-admission > ul > li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.cards-admission .cards-admission-card-body {
+  margin: 0;
+}
+
+/* Title link + chevron badge (echoes the source's circular chevron) */
+.cards-admission .cards-admission-card-body h3 {
+  margin: 0 0 8px;
+  font-family: var(--heading-font-family);
+  font-size: 18px; /* source .md-admission-type__title strong */
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.cards-admission .cards-admission-card-body h3 a:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--brand-yellow);
+  text-decoration: none;
+}
+
+.cards-admission .cards-admission-card-body h3 a:any-link::after {
+  content: '';
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--brand-yellow);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='16' viewBox='0 0 10 16' fill='none' stroke='%23003400' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='2,2 8,8 2,14'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 8px 12px;
+}
+
+.cards-admission .cards-admission-card-body h3 a:hover,
+.cards-admission .cards-admission-card-body h3 a:focus-visible {
+  text-decoration: underline;
+}
+
+/* Description */
+.cards-admission .cards-admission-card-body p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  line-height: 1.4;
+  color: #fff;
+}
+
+@media (width >= 900px) {
+  .cards-admission .cards-admission-card-body p {
+    font-size: 20px; /* source .md-admission-type__desc p */
+  }
+}

@@ -1,0 +1,61 @@
+/* Block: columns-awards -- awards / accolades logo strip
+ * Values extracted from source computed styles at
+ * https://www.mandai.com/en.html (.columncontrol .column-control-blocks)
+ * Source: 4 x .col-md-3.col-xs-6 items (4 cols desktop, 2 cols mobile),
+ * each a centered ~150px logo above a bold caption 8px below.
+ */
+
+/* row = single wrapper holding the award cells */
+.columns-awards > div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 10px;
+  align-items: start;
+}
+
+/* each cell: logo + caption, centered */
+.columns-awards > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 10px;
+}
+
+/* logo image band -- keeps captions aligned across columns */
+.columns-awards > div > div > p:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+  margin: 0;
+}
+
+.columns-awards > div > div picture {
+  display: inline-flex;
+}
+
+.columns-awards > div > div img {
+  width: auto;
+  max-width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+}
+
+/* caption */
+.columns-awards > div > div > p:last-child {
+  margin: 8px 0 0;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--text-color);
+  text-align: center;
+}
+
+@media (width >= 900px) {
+  .columns-awards > div {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+}

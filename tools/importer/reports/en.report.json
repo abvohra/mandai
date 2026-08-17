@@ -1,0 +1,22 @@
+{
+  "status": "success",
+  "url": "https://www.mandai.com/en.html",
+  "path": "en",
+  "timestamp": "2026-08-14T09:03:36.829Z",
+  "title": "Top Attractions in Singapore | Mandai Wildlife Reserve Official Site",
+  "template": "homepage",
+  "blocks": [
+    "carousel-hero",
+    "carousel-feature",
+    "carousel-feature",
+    "carousel-feature",
+    "cards-admission",
+    "cards-tile",
+    "cards-tile",
+    "cards-itinerary",
+    "tabs-guide",
+    "columns-awards",
+    "cards-social",
+    "carousel-quote"
+  ]
+}

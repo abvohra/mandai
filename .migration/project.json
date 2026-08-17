@@ -1,0 +1,11 @@
+{
+  "type": "da",
+  "sites": {
+    "mandai": {
+      "previewOrg": "abvohra",
+      "previewSite": "mandai",
+      "contentHostUrl": "https://content.da.live/abvohra/mandai/",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  }
+}

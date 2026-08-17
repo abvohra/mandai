@@ -1,0 +1,40 @@
+{
+  "variantName": "carousel-hero",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-08-14T08:26:59.225Z",
+  "sourceContext": {
+    "originUrl": "https://www.mandai.com/en.html",
+    "originPage": "Mandai homepage - top masthead carousel",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "image",
+    "density": "wide",
+    "purpose": "hero-banner",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading + optional CTA",
+    "buttonCount": 1,
+    "imageCount": 1,
+    "slideCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "full-bleed rotating hero banners",
+      "landing-page top mastheads"
+    ],
+    "notSuitableFor": [
+      "text-only quote sliders",
+      "small in-content galleries"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/en"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-14T08:26:59.225Z"
+  }
+}

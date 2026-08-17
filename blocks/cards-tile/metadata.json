@@ -1,0 +1,40 @@
+{
+  "variantName": "cards-tile",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-08-14T08:26:59.225Z",
+  "sourceContext": {
+    "originUrl": "https://www.mandai.com/en.html",
+    "originPage": "Mandai homepage - A Wilder World Awaits tiles / Dine & Shop tiles",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "wide",
+    "purpose": "nav-tiles",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + title + short description",
+    "buttonCount": 0,
+    "imageCount": 1,
+    "cardCount": 4
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "image navigation tiles with label/short text",
+      "category entry tiles"
+    ],
+    "notSuitableFor": [
+      "text-only card rows",
+      "long content article cards"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/en"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-08-14T08:26:59.225Z"
+  }
+}

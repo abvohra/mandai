@@ -1,0 +1,40 @@
+{
+  "variantName": "carousel-feature",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-08-14T08:26:59.225Z",
+  "sourceContext": {
+    "originUrl": "https://www.mandai.com/en.html",
+    "originPage": "Mandai homepage - What's New / Mandai-Exclusive Experiences / animal residents carousels",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "image",
+    "density": "wide",
+    "purpose": "feature-gallery",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + title + optional CTA",
+    "buttonCount": 1,
+    "imageCount": 1,
+    "slideCount": 8
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "promotional/experience image-tile galleries",
+      "category showcase sliders"
+    ],
+    "notSuitableFor": [
+      "top hero mastheads",
+      "text-only quote sliders"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/en"
+    ],
+    "reuseCount": 3,
+    "lastUsed": "2026-08-14T08:26:59.225Z"
+  }
+}
