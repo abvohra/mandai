@@ -171,6 +171,20 @@ function decorateSectionMetadata(main) {
 }
 
 /**
+ * Removes the page-level metadata block from the body. Its values are read into
+ * the document head by the pipeline; the bundled aem.js leaves the block in the
+ * DOM, so it would otherwise render as stray text.
+ * @param {Element} main The main element
+ */
+function removePageMetadata(main) {
+  main.querySelectorAll('.section > .metadata, .section .metadata').forEach((meta) => {
+    const wrapper = meta.parentElement;
+    meta.remove();
+    if (wrapper && wrapper.children.length === 0) wrapper.remove();
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -180,6 +194,7 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateSectionMetadata(main);
+  removePageMetadata(main);
   decorateBlocks(main);
   decorateButtons(main);
 }
