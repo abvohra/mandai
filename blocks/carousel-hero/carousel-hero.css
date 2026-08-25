@@ -48,7 +48,7 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
-  object-position: center bottom;
+  object-position: center center;
 }
 
 /* Text panel: centered, no solid box; a subtle radial scrim sits behind the text */
