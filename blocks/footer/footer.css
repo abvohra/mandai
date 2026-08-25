@@ -3,7 +3,7 @@
 footer {
   background-color: #000;
   color: #fff;
-  font-family: var(--body-font-family);
+  font-family: var(--ui-font-family);
   font-size: 14px;
 }
 
@@ -25,9 +25,9 @@ footer .footer a:hover {
 
 footer .footer h2 {
   color: #fff;
-  font-family: var(--heading-font-family);
+  font-family: var(--ui-font-family);
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0 0 18px;
 }
 
