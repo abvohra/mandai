@@ -11,6 +11,7 @@
   /* fonts */
   --heading-font-family: georgia, "Times New Roman", serif;
   --body-font-family: georgia, "Times New Roman", serif;
+  --ui-font-family: poppins, "Helvetica Neue", arial, sans-serif;
 
   /* colors */
   --background-color: rgb(250 245 233); /* warm cream */
