@@ -13,7 +13,7 @@ header .nav-wrapper {
 
 header nav {
   box-sizing: border-box;
-  font-family: var(--body-font-family);
+  font-family: var(--ui-font-family);
   margin: auto;
   max-width: 1280px;
   padding: 0 24px;
