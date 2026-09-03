@@ -102,6 +102,14 @@ export default async function decorate(block) {
     wrapper.replaceWith(...wrapper.childNodes);
   });
 
+  // Document Authoring wraps standalone links in a <p> inside each <li>
+  // (`li > p > a`), while the local dev server serves them as `li > a`.
+  // Unwrap those paragraphs so links are always direct children of their <li>,
+  // which is what the selectors below and decorateNavList() expect.
+  nav.querySelectorAll('li > p').forEach((p) => {
+    p.replaceWith(...p.childNodes);
+  });
+
   // the nav fragment produces 4 sections: brand, main nav, utility, locale
   const sections = nav.querySelectorAll(':scope > .section, :scope > div');
   const classes = ['brand', 'sections', 'utility', 'locale'];
