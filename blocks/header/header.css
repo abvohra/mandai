@@ -57,6 +57,19 @@ header nav .nav-brand img {
 
 header nav .nav-locale {
   order: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* mobile top bar: show only the language toggle; sign in/search live in drawer */
+header nav .nav-locale .nav-signin,
+header nav .nav-locale .nav-search {
+  display: none;
+}
+
+header nav .nav-locale-toggle span {
+  display: none;
 }
 
 /* collapsible groups hidden until menu opens */
@@ -296,7 +309,7 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 
   header nav .nav-brand img { height: 46px; }
 
-  /* utility bar: left links live in nav-utility; split left group vs right group */
+  /* utility bar: left links (Care for Planet, Venues for Hire, Learn with Us) */
   header nav .nav-utility {
     display: block;
     grid-area: utility;
@@ -306,7 +319,7 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
   header nav .nav-utility > ul {
     display: flex;
     align-items: center;
-    gap: 22px;
+    gap: 32px;
     border: none;
   }
 
@@ -315,39 +328,75 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
     position: relative;
   }
 
-  /* Sign in + Buy Now float to the far right band */
-  header nav .nav-utility > ul > li:has(> .nav-signin),
-  header nav .nav-utility > ul > li:has(> .nav-cta) {
-    margin-left: auto;
-  }
-
   header nav .nav-utility .nav-drop-trigger,
   header nav .nav-utility > ul > li > a {
     padding: 8px 0;
     font-family: var(--ui-font-family);
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400;
     color: var(--brand-ink);
     width: auto;
   }
 
+  /* utility links show no caret in the source */
   header nav .nav-utility .nav-drop-trigger::after {
-    width: 6px;
-    height: 6px;
-    border-width: 1.5px;
-    margin-left: 6px;
+    display: none;
   }
 
-  /* locale/tools band (right) */
+  /* tools group (right): language + Sign in + Search */
   header nav .nav-locale {
     grid-area: utility-tools;
     place-self: center end;
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 24px;
   }
 
-  /* main navigation band */
+  header nav .nav-locale-toggle,
+  header nav .nav-signin:any-link,
+  header nav .nav-search {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0;
+    background: none;
+    border: none;
+    font-family: var(--ui-font-family);
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--brand-ink);
+    cursor: pointer;
+  }
+
+  header nav .nav-locale-toggle svg,
+  header nav .nav-signin svg,
+  header nav .nav-search svg {
+    width: 18px;
+    height: 18px;
+    flex: none;
+  }
+
+  /* reveal the full tools group on desktop */
+  header nav .nav-locale .nav-signin,
+  header nav .nav-locale .nav-search {
+    display: inline-flex;
+  }
+
+  header nav .nav-locale-toggle span {
+    display: inline;
+  }
+
+  header nav .nav-locale-toggle {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  /* main navigation band — left aligned, with Buy Now pill at the far right */
   header nav .nav-sections {
-    display: block;
+    display: flex;
+    align-items: center;
     grid-area: sections;
     border-top: 1px solid rgb(0 52 0 / 10%);
   }
@@ -355,7 +404,7 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
   header nav .nav-sections > ul {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 40px;
     border: none;
   }
@@ -374,6 +423,11 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
     font-size: 16px;
     font-weight: 400;
     color: var(--brand-green);
+  }
+
+  /* main nav shows no caret on desktop, matching the source */
+  header nav .nav-sections .nav-drop-trigger::after {
+    display: none;
   }
 
   /* desktop dropdown panels: absolutely positioned flyouts */
@@ -439,18 +493,21 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
     text-decoration: underline;
   }
 
-  /* CTA button on desktop */
-  header nav .nav-cta:any-link {
-    margin: 0;
+  /* CTA button on desktop — sits at the far right of the main nav row */
+  header nav .nav-sections > .nav-cta:any-link {
+    margin: 0 0 0 auto;
     background-color: var(--brand-yellow);
     color: var(--brand-green);
-    font-weight: 700;
-    padding: 9px 20px;
+    font-family: var(--ui-font-family);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px 24px;
     border-radius: 30px;
+    white-space: nowrap;
   }
 
-  header nav .nav-signin:any-link {
-    margin: 0;
-    font-size: 14px;
+  header nav .nav-sections > .nav-cta:hover {
+    text-decoration: none;
+    filter: brightness(0.96);
   }
 }

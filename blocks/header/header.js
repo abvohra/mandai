@@ -4,6 +4,13 @@ import { loadFragment } from '../fragment/fragment.js';
 // media query match that indicates desktop width
 const isDesktop = window.matchMedia('(min-width: 900px)');
 
+// inline icons used by the top-bar tools
+const ICONS = {
+  globe: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 0c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18M3.5 9h17M3.5 15h17"/></svg>',
+  user: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8a7 7 0 0 1 14 0"/></svg>',
+  search: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m20 20-3.5-3.5M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14Z"/></svg>',
+};
+
 /**
  * Fetches the nav fragment. Works both locally (aem up serves /content/nav.plain.html)
  * and on DA/EDS (fetches {navPath}.plain.html).
@@ -106,41 +113,69 @@ export default async function decorate(block) {
   const navUtility = nav.querySelector('.nav-utility');
   const navLocale = nav.querySelector('.nav-locale');
 
-  if (navSections) {
-    const list = navSections.querySelector(':scope > ul, .default-content-wrapper > ul');
-    if (list) decorateNavList(list);
-  }
-
+  // pull Sign in + Buy Now out of the utility list; they belong on the right,
+  // matching the source (Sign in in the top tools group, Buy Now on the nav row)
+  let signinLink = null;
+  let ctaLink = null;
   if (navUtility) {
     const list = navUtility.querySelector(':scope > ul, .default-content-wrapper > ul');
     if (list) {
-      decorateNavList(list);
       list.querySelectorAll(':scope > li > a').forEach((a) => {
-        if (/buy now/i.test(a.textContent)) a.classList.add('nav-cta');
-        if (/sign in/i.test(a.textContent)) a.classList.add('nav-signin');
+        if (/buy now/i.test(a.textContent)) ctaLink = a;
+        if (/sign in/i.test(a.textContent)) signinLink = a;
       });
+      // remove their <li> wrappers from the utility list
+      [signinLink, ctaLink].forEach((a) => { if (a) a.closest('li').remove(); });
+      decorateNavList(list);
     }
   }
 
+  if (navSections) {
+    const list = navSections.querySelector(':scope > ul, .default-content-wrapper > ul');
+    if (list) decorateNavList(list);
+    // place the Buy Now CTA at the end of the main nav row
+    if (ctaLink) {
+      ctaLink.className = 'nav-cta';
+      navSections.append(ctaLink);
+    }
+  }
+
+  // build the top-right tools group: language selector + Sign in + Search
   if (navLocale) {
     const list = navLocale.querySelector(':scope > ul, .default-content-wrapper > ul');
+    let localeToggle = null;
     if (list) {
       list.classList.add('nav-locale-list');
       const current = list.querySelector('li a');
-      const toggle = document.createElement('button');
-      toggle.type = 'button';
-      toggle.className = 'nav-locale-toggle';
-      toggle.setAttribute('aria-haspopup', 'true');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = current ? current.textContent : 'English';
-      toggle.addEventListener('click', () => {
+      localeToggle = document.createElement('button');
+      localeToggle.type = 'button';
+      localeToggle.className = 'nav-locale-toggle';
+      localeToggle.setAttribute('aria-haspopup', 'true');
+      localeToggle.setAttribute('aria-expanded', 'false');
+      localeToggle.innerHTML = `${ICONS.globe}<span>${current ? current.textContent : 'English'}</span>`;
+      localeToggle.addEventListener('click', () => {
         const expanded = navLocale.getAttribute('aria-expanded') === 'true';
         navLocale.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-        toggle.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+        localeToggle.setAttribute('aria-expanded', expanded ? 'false' : 'true');
       });
       navLocale.setAttribute('aria-expanded', 'false');
-      navLocale.prepend(toggle);
+      navLocale.prepend(localeToggle);
     }
+
+    // Sign in (icon + label) moves into the tools group
+    if (signinLink) {
+      signinLink.classList.add('nav-signin');
+      signinLink.innerHTML = `${ICONS.user}<span>${signinLink.textContent}</span>`;
+      navLocale.append(signinLink);
+    }
+
+    // Search trigger (icon + label), built in JS since it has no fragment content
+    const search = document.createElement('button');
+    search.type = 'button';
+    search.className = 'nav-search';
+    search.setAttribute('aria-label', 'Search');
+    search.innerHTML = `${ICONS.search}<span>Search</span>`;
+    navLocale.append(search);
   }
 
   // hamburger for mobile
